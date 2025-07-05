@@ -9,7 +9,7 @@ export default function CertificateBadgeGallery() {
   useEffect(() => {
     const fetchCertified = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/dataset/certified");
+        const res = await fetch("https://certifyaihackathon-vf-production.up.railway.app/api/dataset/certified");
         const data = await res.json();
         setCertified(data);
       } catch (err) {
