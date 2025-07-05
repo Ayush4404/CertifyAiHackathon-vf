@@ -35,6 +35,9 @@ app.use(
   })
 );
  // Restrict to frontend origin
+app.get("/", (req, res) => {
+  res.send("✅ CertifyAI Backend is running");
+});
 
 // Static file server for uploaded datasets
 app.use("/uploads", express.static("uploads"));
