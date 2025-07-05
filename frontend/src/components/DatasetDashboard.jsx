@@ -11,7 +11,7 @@ export default function DatasetDashboard() {
     try {
       setLoading(true);
       setError("");
-      const res = await fetch("http://localhost:4000/api/dataset", {
+      const res = await fetch("https://certifyaihackathon-vf-production.up.railway.app/api/dataset", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
