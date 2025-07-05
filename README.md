@@ -73,6 +73,7 @@ npm install
 Create a `.env` file:
 
 ```env
+MONGO_URI=your_mongo_uri
 PINATA_API_KEY=your_pinata_api_key
 PINATA_SECRET_API_KEY=your_pinata_secret
 PORT=4000
