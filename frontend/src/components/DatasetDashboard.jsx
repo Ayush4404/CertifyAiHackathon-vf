@@ -33,7 +33,7 @@ export default function DatasetDashboard() {
     setCertifyingId(id);
     setError("");
     try {
-      const res = await fetch(`http://localhost:4000/api/dataset/certify/${id}`, {
+      const res = await fetch(`https://certifyaihackathon-vf-production.up.railway.app/api/dataset/certify/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({}), // Empty body, as backend doesn't use it
