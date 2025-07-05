@@ -1,3 +1,4 @@
+// backend/routes/datasetRoutes.js
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
@@ -6,11 +7,7 @@ const path = require("path");
 const { uploadToPinata } = require("../utils/pinataUpload");
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    const uploadDir = process.env.NODE_ENV === "production" ? "/tmp" : "uploads/";
-    if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
-    cb(null, uploadDir);
-  },
+  destination: "uploads/",
   filename: (req, file, cb) => {
     cb(null, Date.now() + "-" + file.originalname);
   },
@@ -70,7 +67,7 @@ router.post("/upload", upload.single("dataset"), async (req, res) => {
     writeDatasets(datasets);
 
     try {
-      fs.unlinkSync(file.path); // Clean up temporary file
+      fs.unlinkSync(file.path);
     } catch (err) {
       console.warn("Failed to delete local file:", err.message);
     }
