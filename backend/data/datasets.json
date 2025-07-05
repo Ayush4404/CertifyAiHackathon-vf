@@ -1,0 +1,107 @@
+[
+  {
+    "id": "1751683444696",
+    "name": "MNIST Dataset",
+    "cid": "bafy123xyz456",
+    "description": "Handwritten digit dataset",
+    "fileHash": "mcpn3g7t",
+    "isCertified": true,
+    "proof": "dummy_zk_proof_hash",
+    "createdAt": "2025-07-05T02:44:04.697Z"
+  },
+  {
+    "id": "1751684527654",
+    "name": "industry.csv",
+    "cid": "Qmxf6df5i1x70td1022xj1b9",
+    "description": "Sample dataset uploaded via UI",
+    "fileHash": "mcpnqnty",
+    "isCertified": true,
+    "proof": "dummy_zk_proof_hash",
+    "createdAt": "2025-07-05T03:02:07.654Z"
+  },
+  {
+    "id": "1751684527669",
+    "name": "industry.csv",
+    "cid": "Qmlzhv8rjngssz5opkfjld5",
+    "description": "Sample dataset uploaded via UI",
+    "fileHash": "mcpnqnud",
+    "isCertified": false,
+    "proof": null,
+    "createdAt": "2025-07-05T03:02:07.669Z"
+  },
+  {
+    "id": "1751705209855",
+    "name": "demo dataset",
+    "fileName": "1751705205190-industry.csv",
+    "fileHash": "mcq01ybj",
+    "isCertified": true,
+    "proof": "dummy_zk_proof_hash_mcq0ocr2",
+    "nft": {
+      "tokenId": 84129,
+      "mintedAt": "2025-07-05T09:04:14.991Z",
+      "metadataURL": "https://dummy-nft.io/token/1751705209855",
+      "owner": "0xDEADBEEF...",
+      "txHash": "0x3b9828098eb5d"
+    },
+    "createdAt": "2025-07-05T08:46:49.855Z",
+    "updatedAt": "2025-07-05T09:04:14.991Z"
+  },
+  {
+    "id": "1751710818320",
+    "name": "industry.csv",
+    "fileName": "1751710815442-industry.csv",
+    "fileHash": "mcq3e5u8",
+    "isCertified": false,
+    "proof": null,
+    "nft": null,
+    "createdAt": "2025-07-05T10:20:18.320Z"
+  },
+  {
+    "id": "1751711650410",
+    "name": "Demo 2",
+    "description": "",
+    "cid": "QmZHNYZKmccGkzkmk8ztp3a6UenLCmtsdjPMtrLTZNErhD",
+    "fileName": "1751711647455-industry.csv",
+    "fileHash": "mcq3vzvu",
+    "isCertified": false,
+    "proof": null,
+    "nft": null,
+    "createdAt": "2025-07-05T10:34:10.410Z"
+  },
+  {
+    "id": "1751712477958",
+    "name": "demo2",
+    "description": "",
+    "cid": "QmZHNYZKmccGkzkmk8ztp3a6UenLCmtsdjPMtrLTZNErhD",
+    "fileName": "1751712471313-industry.csv",
+    "fileHash": "mcq4dqfa",
+    "isCertified": false,
+    "proof": null,
+    "nft": null,
+    "createdAt": "2025-07-05T10:47:57.958Z"
+  },
+  {
+    "id": "1751713801965",
+    "name": "demo3",
+    "description": "",
+    "cid": "QmZHNYZKmccGkzkmk8ztp3a6UenLCmtsdjPMtrLTZNErhD",
+    "fileName": "1751713795208-industry.csv",
+    "fileHash": "mcq56419",
+    "isCertified": false,
+    "proof": null,
+    "nft": null,
+    "createdAt": "2025-07-05T11:10:01.965Z"
+  },
+  {
+    "id": "1751714892690",
+    "name": "color",
+    "description": "",
+    "cid": "QmZcMNqhtjcbojFMSNMgeAUCow1Bvses6BzHnfqypFGgnz",
+    "fileName": "1751714885793-color_x11.csv",
+    "fileHash": "mcq5thn6",
+    "isCertified": false,
+    "proof": null,
+    "nft": null,
+    "createdAt": "2025-07-05T11:28:12.690Z"
+  }
+]
