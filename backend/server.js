@@ -34,11 +34,13 @@ if (!fs.existsSync(uploadDir)) {
 //     credentials: true, // Allow cookies if needed (optional)
 //   })
 // );
-app.use(cors({
-  origin: "https://certify-ai-hackathon-vf.vercel.app", // ✅ your frontend domain
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-}));
+// app.use(cors({
+//   origin: "https://certify-ai-hackathon-vf.vercel.app", // ✅ your frontend domain
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   credentials: true,
+// }));
+app.use(cors());
+
 
  // Restrict to frontend origin
 app.get("/", (req, res) => {
