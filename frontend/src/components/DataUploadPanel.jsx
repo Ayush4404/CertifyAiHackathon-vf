@@ -62,7 +62,7 @@ export default function DataUploadPanel({ onUploadComplete }) {
 
     try {
       console.log("Sending upload request for file:", file.name);
-      const res = await fetch("http://localhost:4000/api/dataset/upload", {
+      const res = await fetch("https://certifyaihackathon-vf-production.up.railway.app/api/dataset/upload", {
         method: "POST",
         body: formData,
       });
