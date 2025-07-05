@@ -7,60 +7,52 @@ const path = require("path");
 
 const datasetRoutes = require("./routes/datasetRoutes");
 
-dotenv.config({ path: path.join(__dirname, '.env') }); // Explicit path for clarity
+dotenv.config({ path: path.join(__dirname, '.env') });
 const app = express();
 
-// Create 'uploads' folder if it doesn't exist
+// ✅ CORS Config: Allow Vercel Frontend + Localhost
+const allowedOrigins = [
+  "https://certify-ai-hackathon-vf.vercel.app",  // Your deployed frontend
+  "http://localhost:5173",                      // Local dev frontend (Vite)
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true,
+}));
+
+// ✅ Create uploads folder if not exists
 const uploadDir = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
   console.log("📁 'Uploads/' directory created");
 }
 
-// Middleware
-// app.use(
-//   cors({
-//     origin: (origin, callback) => {
-//       const allowedOrigins = ["http://localhost:5173", "http://localhost:3000"];
-//       console.log("Request origin:", origin); // Debug log
-//       if (!origin || allowedOrigins.includes(origin)) {
-//         callback(null, true); // Allow if origin is undefined (e.g., same-origin) or in list
-//       } else {
-//         callback(new Error("Not allowed by CORS"));
-//       }
-//     },
-//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow all common methods
-//     allowedHeaders: ["Content-Type", "Authorization"], // Allow relevant headers
-//     credentials: true, // Allow cookies if needed (optional)
-//   })
-// );
-// app.use(cors({
-//   origin: "https://certify-ai-hackathon-vf.vercel.app", // ✅ your frontend domain
-//   methods: ["GET", "POST", "PUT", "DELETE"],
-//   credentials: true,
-// }));
-app.use(cors());
+// ✅ Middleware
+app.use(express.json());
+app.use("/uploads", express.static("uploads"));
 
-
- // Restrict to frontend origin
+// ✅ Health check
 app.get("/", (req, res) => {
   res.send("✅ CertifyAI Backend is running");
 });
 
-// Static file server for uploaded datasets
-app.use("/uploads", express.static("uploads"));
-
-// API Routes
+// ✅ API routes
 app.use("/api/dataset", datasetRoutes);
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-  dbName: "hackathon",
-})
+// ✅ MongoDB connection
+mongoose.connect(process.env.MONGO_URI, { dbName: "hackathon" })
   .then(() => console.log("✅ MongoDB connected"))
   .catch(err => console.error("❌ MongoDB connection error:", err));
 
-// Start the server
+// ✅ Start server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
