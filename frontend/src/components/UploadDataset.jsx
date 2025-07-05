@@ -39,7 +39,7 @@ export default function UploadDataset() {
       data.append("description", formData.description || ""); // Optional description
 
       // Send to backend's /upload route
-      const res = await fetch("http://localhost:4000/api/dataset/upload", {
+      const res = await fetch("https://certifyaihackathon-vf-production.up.railway.app/api/dataset/upload", {
         method: "POST",
         body: data, // No need to set Content-Type; fetch handles it for FormData
       });
