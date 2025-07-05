@@ -22,6 +22,8 @@
 ### 📸 Demo
 
 Coming soon... *(you can host it on Vercel or render.com + backend on Railway)*
+certify-ai-hackathon-vf.vercel.app
+
 
 ---
 
