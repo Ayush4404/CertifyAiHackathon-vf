@@ -59,7 +59,7 @@ function App() {
         <TestimonialSection />
         <FaqSection />
 
-        <div className='mt-10'>
+        <div className='mt-10 mb-15'>
           <CallToActionFooter />
         </div>
 
